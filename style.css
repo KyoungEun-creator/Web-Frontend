@@ -1,0 +1,462 @@
+body {
+    margin: 0;
+    font-size: 0;
+}
+a {
+    text-decoration: none;
+}
+header {
+    position: fixed;    /* 스크롤 내려도 위치 유지 위해 */
+    display: flex;
+    /* width: 1400px; */
+    width: 99%;
+    height: 56px;
+    padding: 0 16px;
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: white;
+}
+#header-left {
+    display: flex;
+    width: 169px;
+    height: 40px;
+    align-items: center;
+    justify-content: flex-start;
+}
+/* fit-content로 하는 게 더 나았을 듯(자식들한테 사이즈 주고) */
+/* #header-left와 #youTubePremium-logo 사이즈가 충돌할 가능성 있음 */
+
+#nav-open-btn {
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    background-color: transparent;
+}
+#nav-open-btn:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+#bar {
+    width: 24px;
+    height: 24px;
+    padding: 5px; 
+    cursor: pointer;
+}
+#youTubePremium-logo {
+    width: 97px;
+    height: 20px;
+    padding: 8px 14px 8px 16px;
+    cursor: pointer;
+    position: relative;
+}
+#country-code {
+    font-size: 10px;
+    color: #606060;
+    margin: 12px 0 0 -10px;
+    position: absolute;
+    top: 1px;
+}
+#header-middle {
+    display: flex;
+    flex-direction: row;    /* #search-bar과 #microphone-btn의 가로 배치 위함  */
+    width: 900px;
+    height: 40px;
+    margin: 0 10px;
+    justify-content: center;
+}
+#search-bar {
+    margin: 0 0 0 40px;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+}
+#search-text {
+    position: relative;
+}
+#search-input {
+    border: 1px solid lightgray;
+    border-radius: 20px 0 0 20px;
+    width: 536px;
+    height: 40px;
+    padding: 0 4px 0 16px;
+    margin: 0 0 0 32px;
+    flex: 1;
+    flex-basis: 1e-9px;
+}
+#search-type-btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+#search-type {
+    width: 19px;
+    height: 11px;
+}
+#magnifyingGlass-btn {
+    background-color: #f8f8f8;
+    width: 64px;
+    height: 42px;
+    border: 1px solid lightgray;
+    border-radius: 0 20px 20px 0;
+    padding: 1px 6px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+#magnifyingGlass-btn:hover {
+    background-color: lightgray;
+    border: 1px solid gray;
+    box-shadow: 0.5px 0.5px #f8f8f8;
+}
+#magnifyingGlass-btn[name]:hover::after {
+	content:attr(name); 
+	position: absolute; 
+	top: 55px;  
+    display: inline-block; 
+    padding: 10px;
+	height: 15px; 
+	background: rgb(44, 44, 44); 
+    opacity: 0.8;
+    color: white; 
+	font-size: 12px; 
+    font-weight: 200;
+    border-radius: 5px;
+	z-index: 100;
+    display: flex;
+    align-items: center;
+}
+/* 지양 */
+#magnifyingGlass {
+    width: 24px;
+    height: 24px;
+}
+#microphone-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#microphone-btn:hover {
+    background-color: lightgray;
+}
+#microphone-btn[name]:hover::after {
+	content:attr(name); 
+	position: absolute; 
+	top: 55px;  
+    display: inline-block; 
+    padding: 10px;
+	height: 15px; 
+	background: rgb(44, 44, 44); 
+    opacity: 0.8;
+    color: white; 
+	font-size: 12px; 
+    font-weight: 200;
+    border-radius: 5px;
+	z-index: 100;
+    display: flex;
+    align-items: center;
+}
+#microphone {
+    width: 24px;
+    height: 24px;
+}
+#header-right {
+    display: flex;
+    width: 156px;
+    height: 40px;
+    margin: 0 10px;
+    align-items: right;
+    justify-content: flex-end;  /* 우측 끝에서 시작 */
+}
+.header-right-btns {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 8px;
+}
+.header-right-btns:hover {
+    background-color: lightgray;
+}
+.header-right-icons {
+    width: 24px;
+    height: 24px;
+}
+.header-right-btns[name]:hover::after {
+	content:attr(name); 
+	position: absolute; 
+	top: 55px; 
+    display: inline-block; 
+    padding: 10px;
+	height: 15px; 
+	background: rgb(44, 44, 44); 
+    opacity: 0.8;
+    color: white; 
+	font-size: 12px; 
+    font-weight: 200;
+    border-radius: 5px;
+	z-index: 100;
+    display: flex;
+    align-items: center;
+}
+#alarm-btn {
+    position: relative;
+}
+#alarm-badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-color: #c00;
+    color: white;
+    width: 13.547px;
+    height: 16px;
+    top: 2px;
+    left: 21px;
+    border: 2px solid #fff;
+    border-radius: 22px;
+    font-size: 12px;
+    padding: 0 4px;
+}
+#profile-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+#profile-img {
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 50%;
+}
+nav {
+    position: fixed;    /* 위치 고정 */
+    display: inline-block;
+    width: 64px;
+    height: 702px;
+    margin-top: 56px;
+    /* text-align: center; */
+    padding: 0 4px;
+}
+.nav-btn {
+    background-color: transparent;
+    width: 100%;
+    height: 74px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px 0 7px;
+    background-color: none;
+    cursor: pointer;
+    padding: 0;
+}
+.nav-btn:hover {
+    background-color: lightgray;
+}
+.nav-btn-img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 6px;
+}
+.nav-name {
+    max-width: 100%;
+    height: 14px;
+    font-size: 10px;
+    overflow: hidden;           /* 넘치는 건 안 보이게 */
+    text-overflow: ellipsis;    /* 넘치는 건 말줄임표로 */
+    white-space: nowrap;        
+}
+main {
+    /* width: 1352px; */
+    width: calc(100% - 72px);
+    height: 10066px;
+    display: inline-block;
+    padding-top: 24px;
+    margin-top: 56px;
+    margin-left: 72px;
+    /* border: 1px solid blue; */
+}
+.contents-row {
+    /* width: 1319px; */
+    width: calc(100% - margin);
+    height: 316.469px;
+    margin: 0 16px;
+    display: flex;
+    /* flex-wrap: wrap; 화면 너비에 따라 줄 바꿈 */
+    justify-content: space-between;
+    /* border: 1px solid green; */
+}
+.contents-row-item {
+    display: inline-block;
+    /* width: 313.74px; */
+    width: calc(100% - margin);
+    /* height: 276.469px; */
+    object-fit: cover;
+    /* height: calc(.thumbnail-box + 78px); */
+    margin: 0 7px 40px 7px;
+    flex: 1; /* 동일한 너비로 분할 */
+    cursor: pointer;
+    /* border: 1px solid red; */
+}
+.thumbnail-box {
+    position: relative;
+    /* border: 1px solid palevioletred; */
+    z-index: -1;
+}
+.thumbnail {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 16 / 9;       /* 16:9 비율 유지 */
+    /* height: 176.61px; */
+    border-radius: 10px;
+}
+.time-status {
+    position: absolute;
+    background-color: black;
+    opacity: 0.8;  
+    display: inline-block;      /* 내용에 맞는 width 길이 갖도록 */
+    height: 12px;
+    padding: 3px 4px;
+    border-radius: 4px;
+    bottom: 3px;
+    right: 3px;
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+} 
+.contents-details {
+    display: flex;
+    flex-direction: row;    /* .avatar과 .meta와 detail-btn의 가로 배치 위함 */
+    width: 100%;
+    height: 100px;           /* 고정 */
+    /* border: 1px solid royalblue; */
+    justify-content: space-between;
+}
+.avatar {
+    width: 36px;
+    height: 36px; 
+    border-radius: 50%;
+    margin: 12px 12px 0 0;
+}
+.meta {
+    display: inline-block;
+    /* width: 265.73px; */
+    width: 100%;
+    height: 100px;
+    /* padding: 0 24px 0 0; */
+    /* border: 1px solid goldenrod; */
+}
+.title {
+    color: black;
+    font-size: 16px;
+    width: 241.73px;
+    height: fit-content;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 12px 0 4px 0;
+    display: -webkit-box;       /* 두 줄부터 말줄임표 */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    /* border: 1px solid rosybrown; */
+}
+.metadatas {
+    color: #606060;
+    font-size: 14px;
+    width: fit-content;
+    height: 20px;
+    /* border: 1px solid turquoise; */
+}
+.detail-btn {
+    background-color: transparent;
+    /* border: 1px solid red; */
+    border-radius: 50%;
+    border: none;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    /* display: none; */
+    right: 0;
+}
+.detail-btn:hover {
+    cursor: pointer;
+    display: block;
+}
+.details {
+    width: 24px;
+    height: 24px;
+}
+
+/* 한 행에 콘텐츠 3개 꽉 차게 */
+@media screen and (min-width: 1098px) and (max-width: 1423px) {
+    .contents-row {
+        /* width: 1287px; */
+        width: calc(100% - margin);
+        height: 316.469px;
+        /* height: 372.297px; */
+        margin: 0 16px;
+        /* border: 1px solid green; */
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-between;
+    }
+    .contents-row-item {
+        margin: 0 8px 40px 8px;
+        flex: 1; /* 동일한 너비로 분할 */
+        margin-right: 14px;
+        margin-bottom: 40px;
+    }
+    .thumbnail {
+        width: 100%;
+        aspect-ratio: 16 / 9;     
+        object-fit: cover;
+    }
+    .thumbnail-box {
+        position: relative;
+        /* border: 1px solid palevioletred; */
+        z-index: -1;
+    }
+    .thumbnail {
+        object-fit: cover;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* 한 행에 콘텐츠 2개 꽉 차게 */
+@media screen and (min-width: 700px) and (max-width: 1097px) {
+    /* 콘텐츠 하나 세로길이 472.484px */
+
+}
+/* 한 행에 콘텐츠 1개 꽉 차게 */
+@media screen and (max-width: 699px) {
+
+}
+
+/* header-middle에 변화 생김 */
+@media screen and (min-width: 1174px) and (max-width: 1440px) {
+    #search-input {
+        width: 536px;
+    }
+}
+@media screen and (max-width: 1173px) {
+    #search-input {
+        /* width: 467px;   비례적으로 축소되도록 */
+    }
+}
+@media screen and (max-width: 656px) {
+    #search-text {
+        display: none; 
+    }
+    /* #magnifyingGlass-btn 모양 바뀌어야함 */
+    #header-left {
+        width: auto;
+    }
+    #header-right {
+        width: auto;
+    }
+}
