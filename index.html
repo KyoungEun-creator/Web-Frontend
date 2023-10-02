@@ -13,7 +13,7 @@
 <body>
     <header>
         <div id="header-left">
-            <button id="nav-open-btn" type="button"><img id="bar" src="imgs/bars-solid.svg"></button>
+            <button id="nav-open-btn" type="submit"><img id="bar" src="imgs/bars-solid.svg"></button>
             <a href="https://www.youtube.com/" title="YouTube 홈">
                 <img id="youTubePremium-logo" src="imgs/YouTube_Premium_logo.svg" alt="Youtube 홈">
                 <span id="country-code">KR</span>
@@ -24,24 +24,31 @@
             <span id="search-bar">
                 <div id="search-text">
                     <input id="search-input" type="text" placeholder="검색">
-                    <button id="search-type-btn" type="button">
-                        <img id="search-type" src="https://www.gstatic.com/inputtools/images/tia.png">
+                    <button id="search-typing-btn" type="button">
+                        <img id="search-keyboard" src="https://www.gstatic.com/inputtools/images/tia.png">
                     </button>
                 </div>
-                <button id="magnifyingGlass-btn" type="submit" value="검색버튼" name="검색"><img id="magnifyingGlass"
-                        src="imgs/magnifying-glass-solid.svg"></button>
+                <button id="magnifyingGlass-btn" class="hover-btn" type="submit" value="검색버튼" name="검색">
+                    <img id="magnifyingGlass" src="imgs/magnifying-glass-solid.svg">
+                    <div id="magnifyingGlass-hover" class="hover-details">검색</div>
+                </button>
             </span>
-            <button id="microphone-btn" type="submit" value="음성으로검색버튼" name="음성으로 검색"><img id="microphone"
-                    src="imgs/microphone-solid.svg"></button>
+            <button id="microphone-btn" class="hover-btn" type="submit" value="음성으로검색버튼" name="음성으로 검색">
+                <img id="microphone" src="imgs/microphone-solid.svg">
+                <div id="microphone-hover" class="hover-details">음성으로 검색</div>
+            </button>
+
         </div>
 
         <div id="header-right">
-            <button id="upload-btn" class="header-right-btns" type="submit" value="업로드버튼" name="업로드">
+            <button id="upload-btn" class="header-right-btns hover-btn" type="submit" value="업로드버튼" name="업로드">
                 <img class="header-right-icons" src="imgs/video-solid.svg">
+                <div id="upload-hover" class="hover-details">만들기</div>
             </button>
-            <button id="alarm-btn" class="header-right-btns" type="submit" value="알림버튼" name="알림">
+            <button id="alarm-btn" class="header-right-btns hover-btn" type="submit" value="알림버튼" name="알림">
                 <img class="header-right-icons" src="imgs/bell-regular.svg">
                 <div id="alarm-badge">9+</div>
+                <div id="alarm-hover" class="hover-details">알림</div>
             </button>
             <button id="profile-btn" type="button">
                 <img id="profile-img" class="header-right-icons"
@@ -51,261 +58,444 @@
     </header>
 
 
-    <nav>
-        <button type="submit" class="nav-btn" value="홈" title="홈">
-            <img class="nav-btn-img" src="imgs/house-solid.svg">
-            <div class="nav-name">홈</div>
+    <nav id="implicit-nav">
+        <button type="submit" class="imnav-btn" value="홈" title="홈">
+            <img class="imnav-btn-img" src="imgs/house-solid.svg">
+            <div class="imnav-name">홈</div>
         </button>
-        <button type="submit" class="nav-btn" value="Shorts" title="Shorts">
-            <img class="nav-btn-img" src="imgs/youtube-shorts-logo.svg">
-            <div class="nav-name">Shorts</div>
+        <button type="submit" class="imnav-btn" value="Shorts" title="Shorts">
+            <img class="imnav-btn-img" src="imgs/youtube-shorts-logo.svg">
+            <div class="imnav-name">Shorts</div>
         </button>
-        <button type="submit" class="nav-btn" value="구독" title="구독">
-            <img class="nav-btn-img" src="imgs/warehouse-solid.svg">
-            <div class="nav-name">구독</div>
+        <button type="submit" class="imnav-btn" value="구독" title="구독">
+            <img class="imnav-btn-img" src="imgs/warehouse-solid.svg">
+            <div class="imnav-name">구독</div>
         </button>
-        <button type="submit" class="nav-btn" value="YouTube Music" title="YouTube Music">
-            <img class="nav-btn-img" src="imgs/database-solid.svg">
-            <div class="nav-name">YouTube Music</div>
+        <button type="submit" class="imnav-btn" value="YouTube Music" title="YouTube Music">
+            <img class="imnav-btn-img" src="imgs/database-solid.svg">
+            <div class="imnav-name">YouTube Music</div>
         </button>
-        <button type="submit" class="nav-btn" value="보관함" title="보관함">
-            <img class="nav-btn-img" src="imgs/warehouse-solid.svg">
-            <div class="nav-name">보관함</div>
+        <button type="submit" class="imnav-btn" value="보관함" title="보관함">
+            <img class="imnav-btn-img" src="imgs/photo-film-solid.svg">
+            <div class="imnav-name">보관함</div>
         </button>
-        <button type="submit" class="nav-btn" value="오프라인 저장 동영상" title="오프라인 저장 동영상">
-            <img class="nav-btn-img" src="imgs/download-solid.svg">
-            <div class="nav-name">오프라인 저장 동영상</div>
+        <button type="submit" class="imnav-btn" value="오프라인 저장 동영상" title="오프라인 저장 동영상">
+            <img class="imnav-btn-img" src="imgs/download-solid.svg">
+            <div class="imnav-name">오프라인 저장 동영상</div>
         </button>
     </nav>
-
-    <main>
-        <div class="contents-row">
-            <div class="contents-row-item">
-                <!-- 상단 -->
-                <a href="https://www.youtube.com/watch?v=VW-Caeb_0OU&t=2s">
-                    <div class="thumbnail-box">
-                        <img class="thumbnail"
-                            src="https://i.ytimg.com/vi/LqME1y6Mlyg/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLCxoHJSZG5Jv57PIVNCyxcJ2JfMAg">
-                        <div class="time-status">7:59:59</div>
-                    </div>
-                </a>
-                <!-- 하단 -->
-                <div class="contents-details">
-                    <!-- 프로필 -->
-                    <a href="https://www.youtube.com/@bossa3047">
-                        <img class="avatar"
-                            src="https://yt3.ggpht.com/bMa6Y7qQ6Q0zCt-5M0gxsmHh6gRdU7m4AnJ6LTN1aNxH7nDMNjnB3vucd4sJ_d6olVEMSh-gMg=s68-c-k-c0x00ffffff-no-rj"></a>
-                    <!-- 제목 등 -->
-                    <div class="meta">
-                        <h3 class="title">[𝐖𝐎𝐑𝐊&𝐉𝐀𝐙𝐙] 사무실에서 일하다가 몰래 리듬타기 좋은 펑키한 재즈비지엠😎💖 l Relaxing Jazz
-                            Piano
-                            Music for Office, Work, Study</h3>
-                        <div>
-                            <a href="https://www.youtube.com/@bossa3047">
-                                <div class="metadatas">
-                                    Jazz Melody</div>
-                            </a>
-                            <a href="https://youtu.be/VW-Caeb_0OU?si=IqG3VU7gq--_aQRa">
-                                <div class="metadatas">조회수 507회 ∙ 1일 전</div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- 세부사항 설정 -->
-                    <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
-                            src="imgs/ellipsis-vertical-solid.svg" /></button>
-
+    <!-- 좌측 아코디언 nav바 -->
+    <div id="explicit-nav">
+        <section id="sections">
+            <!-- 홈~더보기 -->
+            <div class="guide-section">
+                <button type="submit" class="exnav-btn" value="홈" title="홈">
+                    <img class="exnav-btn-img" src="imgs/house-solid.svg">
+                    <div class="exnav-name">홈</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="Shorts" title="Shorts">
+                    <img class="exnav-btn-img" src="imgs/youtube-shorts-logo.svg">
+                    <div class="exnav-name">Shorts</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="구독" title="구독">
+                    <img class="exnav-btn-img" src="imgs/warehouse-solid.svg">
+                    <div class="exnav-name">구독</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="YouTube Music" title="YouTube Music">
+                    <img class="exnav-btn-img" src="imgs/database-solid.svg">
+                    <div class="exnav-name">YouTube Music</div>
+                </button>
+                <div id="inner-guide-section">
+                    <button type="submit" class="exnav-btn" value="보관함" title="보관함">
+                        <img class="exnav-btn-img" src="imgs/photo-film-solid.svg">
+                        <div class="exnav-name">보관함</div>
+                    </button>
+                    <button type="submit" class="exnav-btn" value="시청기록" title="시청기록">
+                        <img class="exnav-btn-img" src="imgs/clock-rotate-left-solid.svg">
+                        <div class="exnav-name">시청기록</div>
+                    </button>
+                    <button type="submit" class="exnav-btn" value="내 동영상" title="내 동영상">
+                        <img class="exnav-btn-img" src="imgs/square-caret-right-regular.svg">
+                        <div class="exnav-name">내 동영상</div>
+                    </button>
+                    <button type="submit" class="exnav-btn" value="내 영화" title="내 영화">
+                        <img class="exnav-btn-img" src="imgs/clapperboard-solid.svg">
+                        <div class="exnav-name">내 영화</div>
+                    </button>
+                    <button type="submit" class="exnav-btn" value="나중에 볼 동영상" title="나중에 볼 동영상">
+                        <img class="exnav-btn-img" src="imgs/clock-regular.svg">
+                        <div class="exnav-name">나중에 볼 동영상</div>
+                    </button>
+                    <button type="submit" class="exnav-btn" value="오프라인 저장 동영상" title="오프라인 저장 동영상">
+                        <img class="exnav-btn-img" src="imgs/download-solid.svg">
+                        <div class="exnav-name">오프라인 저장 동영상</div>
+                    </button>
+                    <button type="submit" class="exnav-btn" value="더보기" title="더보기">
+                        <img class="exnav-btn-img" src="imgs/angle-down-solid.svg">
+                        <div class="exnav-name">더보기</div>
+                    </button>
                 </div>
             </div>
-            <div class="contents-row-item">
-                <a href="https://www.youtube.com/watch?v=x6i3_LfeTjY">
-                    <div class="thumbnail-box">
-                        <img class="thumbnail"
-                            src="https://i.ytimg.com/vi/x6i3_LfeTjY/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLAqeEw2oAWSEkbU9yzkeWa-Kg21SQ">
-                        <div class="time-status">4:00:00</div>
-                    </div>
-                    <div class="contents-details">
-                        <a href="https://www.youtube.com/watch?v=LqME1y6Mlyg"><img class="avatar"
-                                src="https://yt3.ggpht.com/aW-CCbaQ2rbDrEvmpjf630Xhh4wiXEAYs_vZuhX7t3T7tqohQGYl1YzpWNORdJwPin6SMtstyw=s68-c-k-c0x00ffffff-no-rj"></a>
-                        <div class="meta">
-                            <h3 class="title">𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 질리도록 듣는 히트곡엔 그 이유가 있다𝐅𝐞𝐚𝐭. 𝐋𝐚𝐮𝐯, 𝐋𝐚𝐧𝐲,
-                                𝐇𝐨𝐧𝐧𝐞,
-                                𝐤𝐞𝐬𝐡𝐢, 𝐏𝐞𝐝𝐞𝐫 𝐄𝐥𝐢𝐚𝐬, 𝐓𝐫𝐨𝐲𝐞 𝐒𝐢𝐯𝐚𝐧, 𝐂𝐡𝐚𝐫𝐥𝐢𝐞 𝐏𝐮𝐭𝐡
-                            </h3>
-                            <div>
-                                <a href="https://www.youtube.com/@takealook.">
-                                    <div class="metadatas">
-                                        때껄룩ᴛᴀᴋᴇ ᴀ ʟᴏᴏᴋ</div>
-                                </a>
-                                <div class="metadatas">조회수 621만회 ∙ 3개월</div>
-                            </div>
-                        </div>
-                        <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
-                                src="imgs/ellipsis-vertical-solid.svg" /></button>
-                    </div>
-                </a>
+            <!-- 구독 -->
+            <div class="guide-section">
+                <h3>구독</h3>
+                <button type="submit" class="exnav-btn" value="YouTube Music" title="YouTube Music">
+                    <img class="subscribing-channel-img"
+                        src="https://yt3.ggpht.com/bMa6Y7qQ6Q0zCt-5M0gxsmHh6gRdU7m4AnJ6LTN1aNxH7nDMNjnB3vucd4sJ_d6olVEMSh-gMg=s68-c-k-c0x00ffffff-no-rj">
+                    <div class="exnav-name">Jazz Melody</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="YouTube Music" title="YouTube Music">
+                    <img class="subscribing-channel-img"
+                        src="https://yt3.ggpht.com/aW-CCbaQ2rbDrEvmpjf630Xhh4wiXEAYs_vZuhX7t3T7tqohQGYl1YzpWNORdJwPin6SMtstyw=s68-c-k-c0x00ffffff-no-rj">
+                    <div class="exnav-name">때껄룩ᴛᴀᴋᴇ ᴀ ʟᴏᴏᴋ</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="YouTube Music" title="YouTube Music">
+                    <img class="subscribing-channel-img"
+                        src="https://yt3.ggpht.com/QDacIYhtFXHGihhb26N0Kvw-N-hItrVN99wxfgCUeHjGIqLRo8G1_8usIzu1cCDpGIq0DEzz=s68-c-k-c0x00ffffff-no-rj">
+                    <div class="exnav-name">반고흐가 되고싶어</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="YouTube Music" title="YouTube Music">
+                    <img class="subscribing-channel-img"
+                        src="https://yt3.ggpht.com/ytc/AOPolaSBFQ8BAVyWY5yo-CNlnFmJ3LE_7syzZpjG11lntg=s68-c-k-c0x00ffffff-no-rj">
+                    <div class="exnav-name">재즈기자 Jazz Editor</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="YouTube Music" title="YouTube Music">
+                    <img class="subscribing-channel-img"
+                        src="https://yt3.ggpht.com/RL_eRSTZjEdc3vAB78wiK6xihSd3wInZ4g1TA3JLzOvxRdJg_2IKqIw8y3CAd03qvgsBb-P5jQ=s68-c-k-c0x00ffffff-no-rj">
+                    <div class="exnav-name">딩고 뮤직 / dingo music</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="YouTube Music" title="YouTube Music">
+                    <img class="subscribing-channel-img"
+                        src="https://yt3.ggpht.com/Xo80SrZKXQbOIf3vxV_rbspOArWwdODWrMyQaV_k-xhIKGvCv7h1uPqchD-m8ZDxm59Ix01xxA=s68-c-k-c0x00ffffff-no-rj">
+                    <div class="exnav-name">재즈오빠 Jazzoppa</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="YouTube Music" title="YouTube Music">
+                    <img class="subscribing-channel-img"
+                        src="https://yt3.ggpht.com/v-yQ9UVqUgQlxBwlA2qBPI7_QeqbmgrD7uJQiKK4GIvgmrsJeau059F0uFLTRX3XaopNyEm25w=s68-c-k-c0x00ffffff-no-rj">
+                    <div class="exnav-name">때잉</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="YouTube Music" title="YouTube Music">
+                    <img class="subscribing-channel-img"
+                        src="https://yt3.ggpht.com/7C7gf_M2SLHMxYY74vn7QPRJuGrc9Ul2ehvf6LXmHDeAVi4-dBiSOGB8bXhMeLz0GYvqzwbk=s68-c-k-c0x00ffffff-no-rj">
+                    <div class="exnav-name">기분Jazz네 | Mood is Jazz</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="구독 더보기" title="구독 더보기">
+                    <img class="exnav-btn-img" src="imgs/angle-down-solid.svg">
+                    <div class="exnav-name">376개 더보기</div>
+                </button>
             </div>
-            <div class="contents-row-item">
-                <a href="https://www.youtube.com/watch?v=180ysvIh6kU&t=1s">
-                    <div class="thumbnail-box">
-                        <img class="thumbnail"
-                            src="https://i.ytimg.com/vi/180ysvIh6kU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDAwC7NmQpn52EmQ9cd1bA9yVW6Kw">
-                        <div class="time-status">59:45</div>
-                    </div>
-                    <div class="contents-details">
-                        <a href="https://www.youtube.com/@Want_To_Be_VanGogh"><img class="avatar"
-                                src="https://yt3.ggpht.com/QDacIYhtFXHGihhb26N0Kvw-N-hItrVN99wxfgCUeHjGIqLRo8G1_8usIzu1cCDpGIq0DEzz=s68-c-k-c0x00ffffff-no-rj">
+            <!-- 탐색 -->
+            <div class="guide-section">
+                <h3>탐색</h3>
+                <button type="submit" class="exnav-btn" value="인기 급상승" title="인기 급상승">
+                    <img class="exnav-btn-img" src="imgs/fire-solid.svg">
+                    <div class="exnav-name">인기 급상승</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="쇼핑" title="쇼핑">
+                    <img class="exnav-btn-img" src="imgs/bag-shopping-solid.svg">
+                    <div class="exnav-name">쇼핑</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="음악" title="음악">
+                    <img class="exnav-btn-img" src="imgs/music-solid.svg">
+                    <div class="exnav-name">음악</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="영화" title="영화">
+                    <img class="exnav-btn-img" src="imgs/clapperboard-solid.svg">
+                    <div class="exnav-name">영화</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="YouTube Music" title="YouTube Music">
+                    <img class="exnav-btn-img" src="imgs/wifi-solid.svg">
+                    <div class="exnav-name">실시간</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="게임" title="게임">
+                    <img class="exnav-btn-img" src="imgs/gamepad-solid.svg">
+                    <div class="exnav-name">게임</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="스포츠" title="스포츠">
+                    <img class="exnav-btn-img" src="imgs/medal-solid.svg">
+                    <div class="exnav-name">스포츠</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="학습" title="학습">
+                    <img class="exnav-btn-img" src="imgs/lightbulb-regular.svg">
+                    <div class="exnav-name">학습</div>
+                </button>
+            </div>
+            <!-- YouTube 더보기 -->
+            <div class="guide-section">
+                <h3>YouTube 더보기</h3>
+                <button type="submit" class="exnav-btn" value="YouTube Music" title="YouTube Music">
+                    <img class="exnav-btn-img" src="imgs/youtube-studio.webp">
+                    <div class="exnav-name">YouTube 스튜디오</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="YouTube Music" title="YouTube Music">
+                    <img class="exnav-btn-img" src="imgs/youtube-music_icon.png">
+                    <div class="exnav-name">YouTube Music</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="YouTube Music" title="YouTube Music">
+                    <img class="exnav-btn-img" src="imgs/youtube-kids.png">
+                    <div class="exnav-name">YouTube Kids</div>
+                </button>
+            </div>
+            <!-- YouTube 더보기 -->
+            <div class="guide-section">
+                <button type="submit" class="exnav-btn" value="설정" title="설정">
+                    <img class="exnav-btn-img" src="imgs/gear-solid.svg">
+                    <div class="exnav-name">설정</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="신고 기록" title="신고 기록">
+                    <img class="exnav-btn-img" src="imgs/flag-regular.svg">
+                    <div class="exnav-name">신고 기록</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="고객센터" title="고객센터">
+                    <img class="exnav-btn-img" src="imgs/circle-question-solid.svg">
+                    <div class="exnav-name">고객센터</div>
+                </button>
+                <button type="submit" class="exnav-btn" value="의견 보내기" title="의견 보내기">
+                    <img class="exnav-btn-img" src="imgs/circle-exclamation-solid.svg">
+                    <div class="exnav-name">의견 보내기</div>
+                </button>
+            </div>
+        </section>
+        <section id="footer">
+            <div class="footer-guide">
+                정보 보도자료 저작권 문의하기 크리에이터 광고 개발자
+            </div>
+            <div class="footer-guide">
+                약관 개인정보처리방침 정책 및 안전 YouTube 작동의 원리 새로운 기능 테스트하기
+            </div>
+            <div class="footer-guide">
+                © 2023 Google LLC, Sundar Pichai, 1600 Amphitheatre Parkway, Mountain View CA 94043, USA, 0807-882-594
+                (무료), yt-support-solutions-kr@google.com, 호스팅: Google LLC, 사업자정보, 불법촬영물 신고
+                크리에이터들이 유튜브 상에 게시, 태그 또는 추천한 상품들은 판매자들의 약관에 따라 판매됩니다. 유튜브는 이러한 제품들을 판매하지 않으며, 그에 대한 책임을 지지 않습니다.
+            </div>
+        </section>
+    </div>
 
+    <main>
+        <div class="contents-row-item">
+            <!-- 상단 -->
+            <a href="https://www.youtube.com/watch?v=VW-Caeb_0OU&t=2s">
+                <div class="thumbnail-box">
+                    <img class="thumbnail"
+                        src="https://i.ytimg.com/vi/LqME1y6Mlyg/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLCxoHJSZG5Jv57PIVNCyxcJ2JfMAg">
+                    <div class="time-status">7:59:59</div>
+                </div>
+            </a>
+            <!-- 하단 -->
+            <div class="contents-details">
+                <!-- 프로필 -->
+                <a href="https://www.youtube.com/@bossa3047">
+                    <img class="avatar"
+                        src="https://yt3.ggpht.com/bMa6Y7qQ6Q0zCt-5M0gxsmHh6gRdU7m4AnJ6LTN1aNxH7nDMNjnB3vucd4sJ_d6olVEMSh-gMg=s68-c-k-c0x00ffffff-no-rj"></a>
+                <!-- 제목 등 -->
+                <div class="meta">
+                    <h3 class="title">[𝐖𝐎𝐑𝐊&𝐉𝐀𝐙𝐙] 사무실에서 일하다가 몰래 리듬타기 좋은 펑키한 재즈비지엠😎💖 l Relaxing Jazz
+                        Piano
+                        Music for Office, Work, Study</h3>
+                    <div>
+                        <a href="https://www.youtube.com/@bossa3047">
+                            <div class="metadatas">
+                                Jazz Melody</div>
                         </a>
-                        <div class="meta">
-                            <h3 class="title">[Playlist] 비오는 뉴욕 대학교 감성</h3>
-                            <div>
-                                <a href="https://www.youtube.com/@Want_To_Be_VanGogh">
-                                    <div class="metadatas">
-                                        반고흐가 되고싶어</div>
-                                </a>
-                                <div class="metadatas">조회수 195만회 ∙ 4개월</div>
-                            </div>
-                        </div>
-                        <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
-                                src="imgs/ellipsis-vertical-solid.svg" /></button>
+                        <a href="https://youtu.be/VW-Caeb_0OU?si=IqG3VU7gq--_aQRa">
+                            <div class="metadatas">조회수 507회 ∙ 1일 전</div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <div class="contents-row-item">
-                <a href="https://www.youtube.com/watch?v=F64UhWehLOE">
-                    <div class="thumbnail-box">
-                        <img class="thumbnail"
-                            src="https://i.ytimg.com/vi/F64UhWehLOE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBvw5VnIhey2cCQAul0A10tt3PmAw">
-                        <div class="time-status">50:25</div>
-                    </div>
-                    <div class="contents-details">
-                        <a href="https://www.youtube.com/@jazzeditor"><img class="avatar"
-                                src="https://yt3.ggpht.com/ytc/AOPolaSBFQ8BAVyWY5yo-CNlnFmJ3LE_7syzZpjG11lntg=s68-c-k-c0x00ffffff-no-rj"></a>
-                        <div class="meta">
-                            <h3 class="title"><a>[Playlist] 뉴욕의 가을</a></h3>
-                            <div>
-                                <a href="https://www.youtube.com/@jazzeditor">
-                                    <div class="metadatas">
-                                        재즈기자 Jazz Editor</div>
-                                </a>
-                                <div class="metadatas">조회수 1.7만회 ∙ 3일 전</div>
-                            </div>
-                        </div>
-                        <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
-                                src="imgs/ellipsis-vertical-solid.svg" /></button>
-                    </div>
-                </a>
+                </div>
+                <!-- 세부사항 설정 -->
+                <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
+                        src="imgs/ellipsis-vertical-solid.svg" /></button>
+
             </div>
         </div>
-
-        <div class="contents-row">
-            <div class="contents-row-item">
-                <a href="https://www.youtube.com/watch?v=81yQY3TseKQ">
-                    <div class="thumbnail-box">
-                        <img class="thumbnail"
-                            src="https://i.ytimg.com/vi/81yQY3TseKQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDFPswKeZfkzz2eIs7SdwqlYqFt_g">
-                        <div class="time-status">21:05</div>
-                    </div>
-                    <div class="contents-details">
-                        <a href="https://www.youtube.com/@DingoMusic"><img class="avatar"
-                                src="https://yt3.ggpht.com/RL_eRSTZjEdc3vAB78wiK6xihSd3wInZ4g1TA3JLzOvxRdJg_2IKqIw8y3CAd03qvgsBb-P5jQ=s68-c-k-c0x00ffffff-no-rj"></a>
-                        <div class="meta">
-                            <h3 class="title">혼네의 킬링보이스를 라이브로! - free love, Location Unknown, BACK ON TOP, by my side,
-                                Warm
-                                On A Cold Night, Day 1</h3>
-                            <div>
-                                <a href="https://www.youtube.com/@DingoMusic">
-                                    <div class="metadatas">
-                                        딩고 뮤직 / dingo music</div>
-                                </a>
-                                <div class="metadatas">조회수 223만회 ∙ 1년 전</div>
-                            </div>
+        <div class="contents-row-item">
+            <a href="https://www.youtube.com/watch?v=x6i3_LfeTjY">
+                <div class="thumbnail-box">
+                    <img class="thumbnail"
+                        src="https://i.ytimg.com/vi/x6i3_LfeTjY/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLAqeEw2oAWSEkbU9yzkeWa-Kg21SQ">
+                    <div class="time-status">4:00:00</div>
+                </div>
+                <div class="contents-details">
+                    <a href="https://www.youtube.com/watch?v=LqME1y6Mlyg"><img class="avatar"
+                            src="https://yt3.ggpht.com/aW-CCbaQ2rbDrEvmpjf630Xhh4wiXEAYs_vZuhX7t3T7tqohQGYl1YzpWNORdJwPin6SMtstyw=s68-c-k-c0x00ffffff-no-rj"></a>
+                    <div class="meta">
+                        <h3 class="title">𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 질리도록 듣는 히트곡엔 그 이유가 있다𝐅𝐞𝐚𝐭. 𝐋𝐚𝐮𝐯, 𝐋𝐚𝐧𝐲,
+                            𝐇𝐨𝐧𝐧𝐞,
+                            𝐤𝐞𝐬𝐡𝐢, 𝐏𝐞𝐝𝐞𝐫 𝐄𝐥𝐢𝐚𝐬, 𝐓𝐫𝐨𝐲𝐞 𝐒𝐢𝐯𝐚𝐧, 𝐂𝐡𝐚𝐫𝐥𝐢𝐞 𝐏𝐮𝐭𝐡
+                        </h3>
+                        <div>
+                            <a href="https://www.youtube.com/@takealook.">
+                                <div class="metadatas">
+                                    때껄룩ᴛᴀᴋᴇ ᴀ ʟᴏᴏᴋ</div>
+                            </a>
+                            <div class="metadatas">조회수 621만회 ∙ 3개월</div>
                         </div>
-                        <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
-                                src="imgs/ellipsis-vertical-solid.svg" /></button>
                     </div>
-                </a>
-            </div>
-            <div class="contents-row-item">
-                <a href="https://www.youtube.com/watch?v=ezzDBTX7Z3w">
-                    <div class="thumbnail-box">
-                        <img class="thumbnail"
-                            src="https://i.ytimg.com/vi/ezzDBTX7Z3w/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDTrPNizDuYykNirPUENeiNi7b0Yw">
-                        <div class="time-status">8:14:31</div>
-                    </div>
-                    <div class="contents-details">
-                        <a href="https://www.youtube.com/@jazzoppa"><img class="avatar"
-                                src="https://yt3.ggpht.com/Xo80SrZKXQbOIf3vxV_rbspOArWwdODWrMyQaV_k-xhIKGvCv7h1uPqchD-m8ZDxm59Ix01xxA=s68-c-k-c0x00ffffff-no-rj"></a>
-                        <div class="meta">
-                            <h3 class="title">'재진스 pt.III' | 뉴진스 재즈 플리 pt.III [playlist]</h3>
-                            <div>
-                                <a href="https://www.youtube.com/@jazzoppa">
-                                    <div class="metadatas">
-                                        재즈오빠 Jazzoppa</div>
-                                </a>
-                                <div class="metadatas">조회수 27만회 ∙ 1개월</div>
-                            </div>
-                        </div>
-                        <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
-                                src="imgs/ellipsis-vertical-solid.svg" /></button>
-                    </div>
-                </a>
-            </div>
-            <div class="contents-row-item">
-                <a href="https://www.youtube.com/watch?v=59qUq5NRMhE&t=26s">
-                    <div class="thumbnail-box">
-                        <img class="thumbnail"
-                            src="https://i.ytimg.com/vi/59qUq5NRMhE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBd2puQudZfxhJWV1wAu1AIYCKgLQ">
-                        <div class="time-status">1:07:38</div>
-                    </div>
-                    <div class="contents-details">
-                        <a href="https://www.youtube.com/@sttaying"><img class="avatar"
-                                src="https://yt3.ggpht.com/v-yQ9UVqUgQlxBwlA2qBPI7_QeqbmgrD7uJQiKK4GIvgmrsJeau059F0uFLTRX3XaopNyEm25w=s68-c-k-c0x00ffffff-no-rj"></a>
-                        <div class="meta">
-                            <h3 class="title">베이스 매력 모르는 사람 불쌍해</h3>
-                            <div>
-                                <a href="https://www.youtube.com/@sttaying">
-                                    <div class="metadatas">
-                                        때잉</div>
-                                </a>
-                                <div class="metadatas">조회수 622만회 ∙ 1년 전</div>
-                            </div>
-                        </div>
-                        <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
-                                src="imgs/ellipsis-vertical-solid.svg" /></button>
-                    </div>
-                </a>
-            </div>
-            <div class="contents-row-item">
-                <a href="https://www.youtube.com/watch?v=BshkGKR5iL8">
-                    <div class="thumbnail-box">
-                        <img class="thumbnail"
-                            src="https://i.ytimg.com/vi/BshkGKR5iL8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCrF7trszfVd--AeD22kDbqfHrcKg">
-                        <div class="time-status">10:09:57</div>
-                    </div>
-                    <div class="contents-details">
-                        <a href="https://www.youtube.com/@moodisjazz"><img class="avatar"
-                                src="https://yt3.ggpht.com/7C7gf_M2SLHMxYY74vn7QPRJuGrc9Ul2ehvf6LXmHDeAVi4-dBiSOGB8bXhMeLz0GYvqzwbk=s68-c-k-c0x00ffffff-no-rj"></a>
-                        <div class="meta">
-                            <h3 class="title"><a>Playlist | 시원한, 보사노바 재즈</a></h3>
-                            <div>
-                                <a href="https://www.youtube.com/@moodisjazz">
-                                    <div class="metadatas">
-                                        기분Jazz네 | Mood is Jazz</div>
-                                </a>
-                                <div class="metadatas">조회수 192만회 ∙ 1년 전</div>
-                            </div>
-                        </div>
-                        <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
-                                src="imgs/ellipsis-vertical-solid.svg" /></button>
-                    </div>
-                </a>
-            </div>
-
+                    <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
+                            src="imgs/ellipsis-vertical-solid.svg" /></button>
+                </div>
+            </a>
         </div>
+        <div class="contents-row-item">
+            <a href="https://www.youtube.com/watch?v=180ysvIh6kU&t=1s">
+                <div class="thumbnail-box">
+                    <img class="thumbnail"
+                        src="https://i.ytimg.com/vi/180ysvIh6kU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDAwC7NmQpn52EmQ9cd1bA9yVW6Kw">
+                    <div class="time-status">59:45</div>
+                </div>
+                <div class="contents-details">
+                    <a href="https://www.youtube.com/@Want_To_Be_VanGogh"><img class="avatar"
+                            src="https://yt3.ggpht.com/QDacIYhtFXHGihhb26N0Kvw-N-hItrVN99wxfgCUeHjGIqLRo8G1_8usIzu1cCDpGIq0DEzz=s68-c-k-c0x00ffffff-no-rj">
 
+                    </a>
+                    <div class="meta">
+                        <h3 class="title">[Playlist] 비오는 뉴욕 대학교 감성</h3>
+                        <div>
+                            <a href="https://www.youtube.com/@Want_To_Be_VanGogh">
+                                <div class="metadatas">
+                                    반고흐가 되고싶어</div>
+                            </a>
+                            <div class="metadatas">조회수 195만회 ∙ 4개월</div>
+                        </div>
+                    </div>
+                    <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
+                            src="imgs/ellipsis-vertical-solid.svg" /></button>
+                </div>
+            </a>
+        </div>
+        <div class="contents-row-item">
+            <a href="https://www.youtube.com/watch?v=F64UhWehLOE">
+                <div class="thumbnail-box">
+                    <img class="thumbnail"
+                        src="https://i.ytimg.com/vi/F64UhWehLOE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBvw5VnIhey2cCQAul0A10tt3PmAw">
+                    <div class="time-status">50:25</div>
+                </div>
+                <div class="contents-details">
+                    <a href="https://www.youtube.com/@jazzeditor"><img class="avatar"
+                            src="https://yt3.ggpht.com/ytc/AOPolaSBFQ8BAVyWY5yo-CNlnFmJ3LE_7syzZpjG11lntg=s68-c-k-c0x00ffffff-no-rj"></a>
+                    <div class="meta">
+                        <h3 class="title"><a>[Playlist] 뉴욕의 가을</a></h3>
+                        <div>
+                            <a href="https://www.youtube.com/@jazzeditor">
+                                <div class="metadatas">
+                                    재즈기자 Jazz Editor</div>
+                            </a>
+                            <div class="metadatas">조회수 1.7만회 ∙ 3일 전</div>
+                        </div>
+                    </div>
+                    <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
+                            src="imgs/ellipsis-vertical-solid.svg" /></button>
+                </div>
+            </a>
+        </div>
+        <div class="contents-row-item">
+            <a href="https://www.youtube.com/watch?v=81yQY3TseKQ">
+                <div class="thumbnail-box">
+                    <img class="thumbnail"
+                        src="https://i.ytimg.com/vi/81yQY3TseKQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDFPswKeZfkzz2eIs7SdwqlYqFt_g">
+                    <div class="time-status">21:05</div>
+                </div>
+                <div class="contents-details">
+                    <a href="https://www.youtube.com/@DingoMusic"><img class="avatar"
+                            src="https://yt3.ggpht.com/RL_eRSTZjEdc3vAB78wiK6xihSd3wInZ4g1TA3JLzOvxRdJg_2IKqIw8y3CAd03qvgsBb-P5jQ=s68-c-k-c0x00ffffff-no-rj"></a>
+                    <div class="meta">
+                        <h3 class="title">혼네의 킬링보이스를 라이브로! - free love, Location Unknown, BACK ON TOP, by my side,
+                            Warm
+                            On A Cold Night, Day 1</h3>
+                        <div>
+                            <a href="https://www.youtube.com/@DingoMusic">
+                                <div class="metadatas">
+                                    딩고 뮤직 / dingo music</div>
+                            </a>
+                            <div class="metadatas">조회수 223만회 ∙ 1년 전</div>
+                        </div>
+                    </div>
+                    <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
+                            src="imgs/ellipsis-vertical-solid.svg" /></button>
+                </div>
+            </a>
+        </div>
+        <div class="contents-row-item">
+            <a href="https://www.youtube.com/watch?v=ezzDBTX7Z3w">
+                <div class="thumbnail-box">
+                    <img class="thumbnail"
+                        src="https://i.ytimg.com/vi/ezzDBTX7Z3w/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDTrPNizDuYykNirPUENeiNi7b0Yw">
+                    <div class="time-status">8:14:31</div>
+                </div>
+                <div class="contents-details">
+                    <a href="https://www.youtube.com/@jazzoppa"><img class="avatar"
+                            src="https://yt3.ggpht.com/Xo80SrZKXQbOIf3vxV_rbspOArWwdODWrMyQaV_k-xhIKGvCv7h1uPqchD-m8ZDxm59Ix01xxA=s68-c-k-c0x00ffffff-no-rj"></a>
+                    <div class="meta">
+                        <h3 class="title">'재진스 pt.III' | 뉴진스 재즈 플리 pt.III [playlist]</h3>
+                        <div>
+                            <a href="https://www.youtube.com/@jazzoppa">
+                                <div class="metadatas">
+                                    재즈오빠 Jazzoppa</div>
+                            </a>
+                            <div class="metadatas">조회수 27만회 ∙ 1개월</div>
+                        </div>
+                    </div>
+                    <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
+                            src="imgs/ellipsis-vertical-solid.svg" /></button>
+                </div>
+            </a>
+        </div>
+        <div class="contents-row-item">
+            <a href="https://www.youtube.com/watch?v=59qUq5NRMhE&t=26s">
+                <div class="thumbnail-box">
+                    <img class="thumbnail"
+                        src="https://i.ytimg.com/vi/59qUq5NRMhE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBd2puQudZfxhJWV1wAu1AIYCKgLQ">
+                    <div class="time-status">1:07:38</div>
+                </div>
+                <div class="contents-details">
+                    <a href="https://www.youtube.com/@sttaying"><img class="avatar"
+                            src="https://yt3.ggpht.com/v-yQ9UVqUgQlxBwlA2qBPI7_QeqbmgrD7uJQiKK4GIvgmrsJeau059F0uFLTRX3XaopNyEm25w=s68-c-k-c0x00ffffff-no-rj"></a>
+                    <div class="meta">
+                        <h3 class="title">베이스 매력 모르는 사람 불쌍해</h3>
+                        <div>
+                            <a href="https://www.youtube.com/@sttaying">
+                                <div class="metadatas">
+                                    때잉</div>
+                            </a>
+                            <div class="metadatas">조회수 622만회 ∙ 1년 전</div>
+                        </div>
+                    </div>
+                    <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
+                            src="imgs/ellipsis-vertical-solid.svg" /></button>
+                </div>
+            </a>
+        </div>
+        <div class="contents-row-item">
+            <a href="https://www.youtube.com/watch?v=BshkGKR5iL8">
+                <div class="thumbnail-box">
+                    <img class="thumbnail"
+                        src="https://i.ytimg.com/vi/BshkGKR5iL8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCrF7trszfVd--AeD22kDbqfHrcKg">
+                    <div class="time-status">10:09:57</div>
+                </div>
+                <div class="contents-details">
+                    <a href="https://www.youtube.com/@moodisjazz"><img class="avatar"
+                            src="https://yt3.ggpht.com/7C7gf_M2SLHMxYY74vn7QPRJuGrc9Ul2ehvf6LXmHDeAVi4-dBiSOGB8bXhMeLz0GYvqzwbk=s68-c-k-c0x00ffffff-no-rj"></a>
+                    <div class="meta">
+                        <h3 class="title"><a>Playlist | 시원한, 보사노바 재즈</a></h3>
+                        <div>
+                            <a href="https://www.youtube.com/@moodisjazz">
+                                <div class="metadatas">
+                                    기분Jazz네 | Mood is Jazz</div>
+                            </a>
+                            <div class="metadatas">조회수 192만회 ∙ 1년 전</div>
+                        </div>
+                    </div>
+                    <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
+                            src="imgs/ellipsis-vertical-solid.svg" /></button>
+                </div>
+            </a>
+        </div>
 
     </main>
+
+
+
+    <script src="main.js"></script>
 
 </body>
 
