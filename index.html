@@ -13,7 +13,9 @@
 <body>
     <header>
         <div id="header-left">
-            <button id="nav-open-btn" type="submit"><img id="bar" src="imgs/bars-solid.svg"></button>
+            <button id="nav-open-btn" type="submit" onclick="navOpen()">
+                <img id="bar" src="imgs/bars-solid.svg">
+            </button>
             <a href="https://www.youtube.com/" title="YouTube 홈">
                 <img id="youTubePremium-logo" src="imgs/YouTube_Premium_logo.svg" alt="Youtube 홈">
                 <span id="country-code">KR</span>
@@ -33,6 +35,10 @@
                     <div id="magnifyingGlass-hover" class="hover-details">검색</div>
                 </button>
             </span>
+            <button id="magnifyingGlass-btn-small-screen" class="hover-btn" type="submit" value="검색버튼" name="검색">
+                <img id="magnifyingGlass" src="imgs/magnifying-glass-solid.svg">
+                <div id="magnifyingGlass-hover" class="hover-details">검색</div>
+            </button>
             <button id="microphone-btn" class="hover-btn" type="submit" value="음성으로검색버튼" name="음성으로 검색">
                 <img id="microphone" src="imgs/microphone-solid.svg">
                 <div id="microphone-hover" class="hover-details">음성으로 검색</div>
@@ -58,7 +64,7 @@
     </header>
 
 
-    <nav id="implicit-nav">
+    <div id="implicit-nav" style="display:block;">
         <button type="submit" class="imnav-btn" value="홈" title="홈">
             <img class="imnav-btn-img" src="imgs/house-solid.svg">
             <div class="imnav-name">홈</div>
@@ -83,9 +89,9 @@
             <img class="imnav-btn-img" src="imgs/download-solid.svg">
             <div class="imnav-name">오프라인 저장 동영상</div>
         </button>
-    </nav>
+    </div>
     <!-- 좌측 아코디언 nav바 -->
-    <div id="explicit-nav">
+    <div id="explicit-nav" style="display:none;">
         <section id="sections">
             <!-- 홈~더보기 -->
             <div class="guide-section">
@@ -272,30 +278,35 @@
     </div>
 
     <main>
-        <div class="contents-row-item">
+        <div id="a-content" class="contents-row-item">
             <!-- 상단 -->
             <a href="https://www.youtube.com/watch?v=VW-Caeb_0OU&t=2s">
                 <div class="thumbnail-box">
-                    <img class="thumbnail"
-                        src="https://i.ytimg.com/vi/LqME1y6Mlyg/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLCxoHJSZG5Jv57PIVNCyxcJ2JfMAg">
+                    <img id="a-thumbnail" class="thumbnail"
+                        src="https://i.ytimg.com/vi/LqME1y6Mlyg/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLCxoHJSZG5Jv57PIVNCyxcJ2JfMAg" />
+                    <iframe id="a-video" class="thumbnail-video" style="display: none;"
+                        src="https://www.youtube.com/embed/VW-Caeb_0OU?si=x8-af50JDEaNv3Ul?autoplay=1&mute=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
                     <div class="time-status">7:59:59</div>
                 </div>
             </a>
             <!-- 하단 -->
-            <div class="contents-details">
+            <div class="contents-details a">
                 <!-- 프로필 -->
                 <a href="https://www.youtube.com/@bossa3047">
                     <img class="avatar"
-                        src="https://yt3.ggpht.com/bMa6Y7qQ6Q0zCt-5M0gxsmHh6gRdU7m4AnJ6LTN1aNxH7nDMNjnB3vucd4sJ_d6olVEMSh-gMg=s68-c-k-c0x00ffffff-no-rj"></a>
+                        src="https://yt3.ggpht.com/bMa6Y7qQ6Q0zCt-5M0gxsmHh6gRdU7m4AnJ6LTN1aNxH7nDMNjnB3vucd4sJ_d6olVEMSh-gMg=s68-c-k-c0x00ffffff-no-rj">
+                </a>
                 <!-- 제목 등 -->
                 <div class="meta">
-                    <h3 class="title">[𝐖𝐎𝐑𝐊&𝐉𝐀𝐙𝐙] 사무실에서 일하다가 몰래 리듬타기 좋은 펑키한 재즈비지엠😎💖 l Relaxing Jazz
-                        Piano
+                    <h3 class="title">[𝐖𝐎𝐑𝐊&𝐉𝐀𝐙𝐙] 사무실에서 일하다가 몰래 리듬타기 좋은 펑키한 재즈비지엠😎💖 l Relaxing Jazz Piano
                         Music for Office, Work, Study</h3>
                     <div>
                         <a href="https://www.youtube.com/@bossa3047">
-                            <div class="metadatas">
-                                Jazz Melody</div>
+                            <div class="metadatas">Jazz Melody</div>
                         </a>
                         <a href="https://youtu.be/VW-Caeb_0OU?si=IqG3VU7gq--_aQRa">
                             <div class="metadatas">조회수 507회 ∙ 1일 전</div>
@@ -303,190 +314,245 @@
                     </div>
                 </div>
                 <!-- 세부사항 설정 -->
-                <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
-                        src="imgs/ellipsis-vertical-solid.svg" /></button>
+                <button class="detail-btn a-detail" type="submit" value="세부사항 설정" style="display: none">
+                    <img class="details" src="imgs/ellipsis-vertical-solid.svg" />
+                </button>
 
             </div>
         </div>
-        <div class="contents-row-item">
+        <div id="b-content" class="contents-row-item">
             <a href="https://www.youtube.com/watch?v=x6i3_LfeTjY">
                 <div class="thumbnail-box">
-                    <img class="thumbnail"
-                        src="https://i.ytimg.com/vi/x6i3_LfeTjY/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLAqeEw2oAWSEkbU9yzkeWa-Kg21SQ">
+                    <img id="b-thumbnail" class="thumbnail"
+                        src="https://i.ytimg.com/vi/x6i3_LfeTjY/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLAqeEw2oAWSEkbU9yzkeWa-Kg21SQ" />
+                    <iframe id="b-video" class="thumbnail-video" style="display: none;"
+                        src="https://www.youtube.com/embed/x6i3_LfeTjY?si=T_hCu_IuyGUhCWQP?autoplay=1&mute=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
                     <div class="time-status">4:00:00</div>
                 </div>
-                <div class="contents-details">
-                    <a href="https://www.youtube.com/watch?v=LqME1y6Mlyg"><img class="avatar"
-                            src="https://yt3.ggpht.com/aW-CCbaQ2rbDrEvmpjf630Xhh4wiXEAYs_vZuhX7t3T7tqohQGYl1YzpWNORdJwPin6SMtstyw=s68-c-k-c0x00ffffff-no-rj"></a>
+                <div class="contents-details b">
+                    <a href="https://www.youtube.com/watch?v=LqME1y6Mlyg">
+                        <img class="avatar"
+                            src="https://yt3.ggpht.com/aW-CCbaQ2rbDrEvmpjf630Xhh4wiXEAYs_vZuhX7t3T7tqohQGYl1YzpWNORdJwPin6SMtstyw=s68-c-k-c0x00ffffff-no-rj">
+                    </a>
                     <div class="meta">
                         <h3 class="title">𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 질리도록 듣는 히트곡엔 그 이유가 있다𝐅𝐞𝐚𝐭. 𝐋𝐚𝐮𝐯, 𝐋𝐚𝐧𝐲,
-                            𝐇𝐨𝐧𝐧𝐞,
-                            𝐤𝐞𝐬𝐡𝐢, 𝐏𝐞𝐝𝐞𝐫 𝐄𝐥𝐢𝐚𝐬, 𝐓𝐫𝐨𝐲𝐞 𝐒𝐢𝐯𝐚𝐧, 𝐂𝐡𝐚𝐫𝐥𝐢𝐞 𝐏𝐮𝐭𝐡
-                        </h3>
+                            𝐇𝐨𝐧𝐧𝐞, 𝐤𝐞𝐬𝐡𝐢, 𝐏𝐞𝐝𝐞𝐫 𝐄𝐥𝐢𝐚𝐬, 𝐓𝐫𝐨𝐲𝐞 𝐒𝐢𝐯𝐚𝐧, 𝐂𝐡𝐚𝐫𝐥𝐢𝐞
+                            𝐏𝐮𝐭𝐡</h3>
                         <div>
                             <a href="https://www.youtube.com/@takealook.">
-                                <div class="metadatas">
-                                    때껄룩ᴛᴀᴋᴇ ᴀ ʟᴏᴏᴋ</div>
+                                <div class="metadatas">때껄룩ᴛᴀᴋᴇ ᴀ ʟᴏᴏᴋ</div>
                             </a>
                             <div class="metadatas">조회수 621만회 ∙ 3개월</div>
                         </div>
                     </div>
-                    <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
-                            src="imgs/ellipsis-vertical-solid.svg" /></button>
+                    <button class="detail-btn b-detail" type="submit" value="세부사항 설정" style="display: none">
+                        <img class="details" src="imgs/ellipsis-vertical-solid.svg" />
+                    </button>
                 </div>
             </a>
         </div>
-        <div class="contents-row-item">
+        <div id="c-content" class="contents-row-item">
             <a href="https://www.youtube.com/watch?v=180ysvIh6kU&t=1s">
                 <div class="thumbnail-box">
-                    <img class="thumbnail"
-                        src="https://i.ytimg.com/vi/180ysvIh6kU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDAwC7NmQpn52EmQ9cd1bA9yVW6Kw">
+                    <img id="c-thumbnail" class="thumbnail"
+                        src="https://i.ytimg.com/vi/180ysvIh6kU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDAwC7NmQpn52EmQ9cd1bA9yVW6Kw" />
+                    <iframe id="c-video" class="thumbnail-video" style="display: none;"
+                        src="https://www.youtube.com/embed/180ysvIh6kU?si=3N7ZklmVFtAmLxBE?autoplay=1&mute=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
                     <div class="time-status">59:45</div>
                 </div>
-                <div class="contents-details">
-                    <a href="https://www.youtube.com/@Want_To_Be_VanGogh"><img class="avatar"
+                <div class="contents-details c">
+                    <a href="https://www.youtube.com/@Want_To_Be_VanGogh">
+                        <img class="avatar"
                             src="https://yt3.ggpht.com/QDacIYhtFXHGihhb26N0Kvw-N-hItrVN99wxfgCUeHjGIqLRo8G1_8usIzu1cCDpGIq0DEzz=s68-c-k-c0x00ffffff-no-rj">
-
                     </a>
                     <div class="meta">
                         <h3 class="title">[Playlist] 비오는 뉴욕 대학교 감성</h3>
                         <div>
                             <a href="https://www.youtube.com/@Want_To_Be_VanGogh">
-                                <div class="metadatas">
-                                    반고흐가 되고싶어</div>
+                                <div class="metadatas">반고흐가 되고싶어</div>
                             </a>
                             <div class="metadatas">조회수 195만회 ∙ 4개월</div>
                         </div>
                     </div>
-                    <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
-                            src="imgs/ellipsis-vertical-solid.svg" /></button>
+                    <button class="detail-btn c-detail" type="submit" value="세부사항 설정" style="display: none">
+                        <img class="details" src="imgs/ellipsis-vertical-solid.svg" />
+                    </button>
                 </div>
             </a>
         </div>
-        <div class="contents-row-item">
+        <div id="d-content" class="contents-row-item">
             <a href="https://www.youtube.com/watch?v=F64UhWehLOE">
                 <div class="thumbnail-box">
-                    <img class="thumbnail"
-                        src="https://i.ytimg.com/vi/F64UhWehLOE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBvw5VnIhey2cCQAul0A10tt3PmAw">
+                    <img id="d-thumbnail" class="thumbnail"
+                        src="https://i.ytimg.com/vi/F64UhWehLOE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBvw5VnIhey2cCQAul0A10tt3PmAw" />
+                    <iframe id="d-video" class="thumbnail-video" style="display: none;"
+                        src="https://www.youtube.com/embed/F64UhWehLOE?si=PHSTPd88-ASKDCVQ?autoplay=1&mute=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
                     <div class="time-status">50:25</div>
                 </div>
-                <div class="contents-details">
-                    <a href="https://www.youtube.com/@jazzeditor"><img class="avatar"
-                            src="https://yt3.ggpht.com/ytc/AOPolaSBFQ8BAVyWY5yo-CNlnFmJ3LE_7syzZpjG11lntg=s68-c-k-c0x00ffffff-no-rj"></a>
+                <div class="contents-details d">
+                    <a href="https://www.youtube.com/@jazzeditor">
+                        <img class="avatar"
+                            src="https://yt3.ggpht.com/ytc/AOPolaSBFQ8BAVyWY5yo-CNlnFmJ3LE_7syzZpjG11lntg=s68-c-k-c0x00ffffff-no-rj">
+                    </a>
                     <div class="meta">
-                        <h3 class="title"><a>[Playlist] 뉴욕의 가을</a></h3>
+                        <h3 class="title">
+                            <a>[Playlist] 뉴욕의 가을</a>
+                        </h3>
                         <div>
                             <a href="https://www.youtube.com/@jazzeditor">
-                                <div class="metadatas">
-                                    재즈기자 Jazz Editor</div>
+                                <div class="metadatas">재즈기자 Jazz Editor</div>
                             </a>
                             <div class="metadatas">조회수 1.7만회 ∙ 3일 전</div>
                         </div>
                     </div>
-                    <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
-                            src="imgs/ellipsis-vertical-solid.svg" /></button>
+                    <button class="detail-btn d-detail" type="submit" value="세부사항 설정" style="display: none">
+                        <img class="details" src="imgs/ellipsis-vertical-solid.svg" />
+                    </button>
                 </div>
             </a>
         </div>
-        <div class="contents-row-item">
+        <div id="e-content" class="contents-row-item">
             <a href="https://www.youtube.com/watch?v=81yQY3TseKQ">
                 <div class="thumbnail-box">
-                    <img class="thumbnail"
-                        src="https://i.ytimg.com/vi/81yQY3TseKQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDFPswKeZfkzz2eIs7SdwqlYqFt_g">
+                    <img id="e-thumbnail" class="thumbnail"
+                        src="https://i.ytimg.com/vi/81yQY3TseKQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDFPswKeZfkzz2eIs7SdwqlYqFt_g" />
+                    <iframe id="e-video" class="thumbnail-video" style="display: none;"
+                        src="https://www.youtube.com/embed/81yQY3TseKQ?si=lO2nLaG8mBrfkMVe?autoplay=1&mute=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
                     <div class="time-status">21:05</div>
                 </div>
-                <div class="contents-details">
-                    <a href="https://www.youtube.com/@DingoMusic"><img class="avatar"
-                            src="https://yt3.ggpht.com/RL_eRSTZjEdc3vAB78wiK6xihSd3wInZ4g1TA3JLzOvxRdJg_2IKqIw8y3CAd03qvgsBb-P5jQ=s68-c-k-c0x00ffffff-no-rj"></a>
+                <div class="contents-details e">
+                    <a href="https://www.youtube.com/@DingoMusic">
+                        <img class="avatar"
+                            src="https://yt3.ggpht.com/RL_eRSTZjEdc3vAB78wiK6xihSd3wInZ4g1TA3JLzOvxRdJg_2IKqIw8y3CAd03qvgsBb-P5jQ=s68-c-k-c0x00ffffff-no-rj">
+                    </a>
                     <div class="meta">
-                        <h3 class="title">혼네의 킬링보이스를 라이브로! - free love, Location Unknown, BACK ON TOP, by my side,
-                            Warm
+                        <h3 class="title">혼네의 킬링보이스를 라이브로! - free love, Location Unknown, BACK ON TOP, by my side, Warm
                             On A Cold Night, Day 1</h3>
                         <div>
                             <a href="https://www.youtube.com/@DingoMusic">
-                                <div class="metadatas">
-                                    딩고 뮤직 / dingo music</div>
+                                <div class="metadatas">딩고 뮤직 / dingo music</div>
                             </a>
                             <div class="metadatas">조회수 223만회 ∙ 1년 전</div>
                         </div>
                     </div>
-                    <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
-                            src="imgs/ellipsis-vertical-solid.svg" /></button>
+                    <button class="detail-btn e-detail" type="submit" value="세부사항 설정" style="display: none">
+                        <img class="details" src="imgs/ellipsis-vertical-solid.svg" />
+                    </button>
                 </div>
             </a>
         </div>
-        <div class="contents-row-item">
+        <div id="f-content" class="contents-row-item">
             <a href="https://www.youtube.com/watch?v=ezzDBTX7Z3w">
                 <div class="thumbnail-box">
-                    <img class="thumbnail"
-                        src="https://i.ytimg.com/vi/ezzDBTX7Z3w/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDTrPNizDuYykNirPUENeiNi7b0Yw">
+                    <img id="f-thumbnail" class="thumbnail"
+                        src="https://i.ytimg.com/vi/ezzDBTX7Z3w/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDTrPNizDuYykNirPUENeiNi7b0Yw" />
+                    <iframe id="f-video" class="thumbnail-video" style="display: none;"
+                        src="https://www.youtube.com/embed/ezzDBTX7Z3w?si=0HXzQjmi1KRcHczj?autoplay=1&mute=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
                     <div class="time-status">8:14:31</div>
                 </div>
-                <div class="contents-details">
-                    <a href="https://www.youtube.com/@jazzoppa"><img class="avatar"
-                            src="https://yt3.ggpht.com/Xo80SrZKXQbOIf3vxV_rbspOArWwdODWrMyQaV_k-xhIKGvCv7h1uPqchD-m8ZDxm59Ix01xxA=s68-c-k-c0x00ffffff-no-rj"></a>
+                <div class="contents-details f">
+                    <a href="https://www.youtube.com/@jazzoppa">
+                        <img class="avatar"
+                            src="https://yt3.ggpht.com/Xo80SrZKXQbOIf3vxV_rbspOArWwdODWrMyQaV_k-xhIKGvCv7h1uPqchD-m8ZDxm59Ix01xxA=s68-c-k-c0x00ffffff-no-rj">
+                    </a>
                     <div class="meta">
                         <h3 class="title">'재진스 pt.III' | 뉴진스 재즈 플리 pt.III [playlist]</h3>
                         <div>
                             <a href="https://www.youtube.com/@jazzoppa">
-                                <div class="metadatas">
-                                    재즈오빠 Jazzoppa</div>
+                                <div class="metadatas">재즈오빠 Jazzoppa</div>
                             </a>
                             <div class="metadatas">조회수 27만회 ∙ 1개월</div>
                         </div>
                     </div>
-                    <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
-                            src="imgs/ellipsis-vertical-solid.svg" /></button>
+                    <button class="detail-btn f-detail" type="submit" value="세부사항 설정" style="display: none">
+                        <img class="details" src="imgs/ellipsis-vertical-solid.svg" />
+                    </button>
                 </div>
             </a>
         </div>
-        <div class="contents-row-item">
+        <div id="g-content" class="contents-row-item">
             <a href="https://www.youtube.com/watch?v=59qUq5NRMhE&t=26s">
                 <div class="thumbnail-box">
-                    <img class="thumbnail"
-                        src="https://i.ytimg.com/vi/59qUq5NRMhE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBd2puQudZfxhJWV1wAu1AIYCKgLQ">
+                    <img id="g-thumbnail" class="thumbnail"
+                        src="https://i.ytimg.com/vi/59qUq5NRMhE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBd2puQudZfxhJWV1wAu1AIYCKgLQ" />
+                    <iframe id="g-video" class="thumbnail-video" style="display: none;"
+                        src="https://www.youtube.com/embed/59qUq5NRMhE?si=n73iE2H4PEP1Kinb?autoplay=1&mute=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
                     <div class="time-status">1:07:38</div>
                 </div>
-                <div class="contents-details">
-                    <a href="https://www.youtube.com/@sttaying"><img class="avatar"
-                            src="https://yt3.ggpht.com/v-yQ9UVqUgQlxBwlA2qBPI7_QeqbmgrD7uJQiKK4GIvgmrsJeau059F0uFLTRX3XaopNyEm25w=s68-c-k-c0x00ffffff-no-rj"></a>
+                <div class="contents-details g">
+                    <a href="https://www.youtube.com/@sttaying">
+                        <img class="avatar"
+                            src="https://yt3.ggpht.com/v-yQ9UVqUgQlxBwlA2qBPI7_QeqbmgrD7uJQiKK4GIvgmrsJeau059F0uFLTRX3XaopNyEm25w=s68-c-k-c0x00ffffff-no-rj">
+                    </a>
                     <div class="meta">
                         <h3 class="title">베이스 매력 모르는 사람 불쌍해</h3>
                         <div>
                             <a href="https://www.youtube.com/@sttaying">
-                                <div class="metadatas">
-                                    때잉</div>
+                                <div class="metadatas">때잉</div>
                             </a>
                             <div class="metadatas">조회수 622만회 ∙ 1년 전</div>
                         </div>
                     </div>
-                    <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
-                            src="imgs/ellipsis-vertical-solid.svg" /></button>
+                    <button class="detail-btn g-detail" type="submit" value="세부사항 설정" style="display: none">
+                        <img class="details" src="imgs/ellipsis-vertical-solid.svg" />
+                    </button>
                 </div>
             </a>
         </div>
-        <div class="contents-row-item">
+        <div id="h-content" class="contents-row-item">
             <a href="https://www.youtube.com/watch?v=BshkGKR5iL8">
                 <div class="thumbnail-box">
-                    <img class="thumbnail"
-                        src="https://i.ytimg.com/vi/BshkGKR5iL8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCrF7trszfVd--AeD22kDbqfHrcKg">
+                    <img id="h-thumbnail" class="thumbnail"
+                        src="https://i.ytimg.com/vi/BshkGKR5iL8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCrF7trszfVd--AeD22kDbqfHrcKg" />
+                    <iframe id="h-video" class="thumbnail-video" style="display: none;"
+                        src="https://www.youtube.com/embed/BshkGKR5iL8?si=dyNJ1PM04qMKvBXW?autoplay=1&mute=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
                     <div class="time-status">10:09:57</div>
                 </div>
-                <div class="contents-details">
-                    <a href="https://www.youtube.com/@moodisjazz"><img class="avatar"
-                            src="https://yt3.ggpht.com/7C7gf_M2SLHMxYY74vn7QPRJuGrc9Ul2ehvf6LXmHDeAVi4-dBiSOGB8bXhMeLz0GYvqzwbk=s68-c-k-c0x00ffffff-no-rj"></a>
+                <div class="contents-details h">
+                    <a href="https://www.youtube.com/@moodisjazz">
+                        <img class="avatar"
+                            src="https://yt3.ggpht.com/7C7gf_M2SLHMxYY74vn7QPRJuGrc9Ul2ehvf6LXmHDeAVi4-dBiSOGB8bXhMeLz0GYvqzwbk=s68-c-k-c0x00ffffff-no-rj">
+                    </a>
                     <div class="meta">
-                        <h3 class="title"><a>Playlist | 시원한, 보사노바 재즈</a></h3>
+                        <h3 class="title">Playlist | 시원한, 보사노바 재즈</h3>
                         <div>
                             <a href="https://www.youtube.com/@moodisjazz">
-                                <div class="metadatas">
-                                    기분Jazz네 | Mood is Jazz</div>
+                                <div class="metadatas">기분Jazz네 | Mood is Jazz</div>
                             </a>
                             <div class="metadatas">조회수 192만회 ∙ 1년 전</div>
                         </div>
                     </div>
-                    <button class="detail-btn" type="submit" value="세부사항 설정"><img class="details"
-                            src="imgs/ellipsis-vertical-solid.svg" /></button>
+                    <button class="detail-btn h-detail" type="submit" value="세부사항 설정" style="display: none">
+                        <img class="details" src="imgs/ellipsis-vertical-solid.svg" />
+                    </button>
                 </div>
             </a>
         </div>

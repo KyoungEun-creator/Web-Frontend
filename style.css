@@ -23,7 +23,11 @@ header {
     border: none;
     border-radius: 50%;
     width: 40px;
+    height: 40px;
     background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #nav-open-btn:hover {
     background-color: lightgray;
@@ -122,6 +126,15 @@ header {
     width: 24px;
     height: 24px;
 }
+#magnifyingGlass-btn-small-screen {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: transparent;
+    display: none;
+}
 #microphone-btn {
     width: 40px;
     height: 40px;
@@ -190,11 +203,12 @@ header {
     border: none;
     border-radius: 50%;
 }
+
 #implicit-nav {
     position: fixed;    /* 위치 고정 */
-    display: none;
-    /* width: 64px;
-    height: 702px; */
+    /* display: block; */
+    /* width: 64px; */
+    height: 702px;
     margin-top: 56px;
     padding: 0 4px;
     background-color: white;
@@ -303,16 +317,13 @@ header {
     font-size: 14px;
 }
 main {
-    width: calc(100% - margin);   /* nav바 너비 뺌 */
+    width: calc(100% - margin-left);   /* nav바 너비 뺌 */
     display: flex;
     flex-wrap: wrap;
     margin-left: 72px;
     padding: 70px 30px 0 30px;
-    margin: 0 15px;
-    /* border: 1px solid blue; */
 }
 .contents-row-item {
-    /* display: inline-block; */
     width: 313px;
     object-fit: cover;  /* 비율 고정 */
     margin: 0 7px 40px 7px;
@@ -320,11 +331,11 @@ main {
     flex-shrink: 1;
     flex-basis: 310px;
     cursor: pointer;
-    /* border: 1px solid red; */
+    transition:
+        transform 3s;
 }
 .thumbnail-box {
     position: relative;
-    /* border: 1px solid palevioletred; */
     z-index: -1;
 }
 .thumbnail {
@@ -332,6 +343,11 @@ main {
     width: 100%;
     aspect-ratio: 16 / 9;       /* 16:9 비율 유지 */
     border-radius: 10px;
+}
+
+.thumbnail-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
 }
 .time-status {
     position: absolute;
@@ -385,7 +401,6 @@ main {
 }
 .detail-btn {
     background-color: transparent;
-    /* border: 1px solid red; */
     border-radius: 50%;
     border: none;
     width: 40px;
@@ -405,20 +420,38 @@ main {
 
 /* 656px부터 #magnifyingGlass-btn 모양 바뀜 */
 @media screen and (max-width: 656px) {
-    #search-text {
+    #search-bar {
         display: none; 
+    }
+    #magnifyingGlass-btn-small-screen {
+        display: block;
+    }
+    #microphone-btn {
+        background-color: transparent;
+    }
+    #header-right {
+        display: flex;
+        width: 156px;
+        height: 40px;
+        padding: 0 30px;
+        align-items: right;
+        justify-content: flex-end; 
     }
 }
 
 /* 791px부터 implicit nav 사라짐 */
-/* margin-left: 72px 사라짐 */
+/* main의 margin-left: 72px 사라짐 */
 @media screen and (max-width: 791px) {
     #implicit-nav {
         display: none;
     }
+    main {
+        width: calc(100% - margin-left);   /* nav바 너비 뺌 */
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 0;
+        padding: 70px 30px 0 30px;
+    }
 }
 
-/* 1313px부터 explicit -> implicit으로 변함 */
-@media screen and (max-width: 1313px) {
 
-}
