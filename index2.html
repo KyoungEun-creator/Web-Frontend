@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자야구게임</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+
+    <main>
+        <img id="bg-img" src="imgs/playground.png">
+
+        <div id="example">
+            <button id="out" class="events">OUT</button>
+            <button id="ball" class="events">BALL</button>
+            <button id="strike" class="events">STRIKE</button>
+        </div>
+
+        <!-- 유저가 누른 inputNumList -->
+        <div id="num-board">
+            <div id="num1" class="chosen-num">?</div>
+            <div id="num2" class="chosen-num">?</div>
+            <div id="num3" class="chosen-num">?</div>
+        </div>
+
+        <!-- 결과 -->
+        <div id="result-board">
+            <div class="results">
+                <button id="out" class="events hidden"></button>
+                <button id="ball" class="events hidden"></button>
+                <button id="strike" class="events hidden"></button>
+            </div>
+            <div class="results">
+                <button id="out" class="events hidden"></button>
+                <button id="ball" class="events hidden"></button>
+                <button id="strike" class="events hidden"></button>
+            </div>
+            <div class="results">
+                <button id="out" class="events hidden"></button>
+                <button id="ball" class="events hidden"></button>
+                <button id="strike" class="events hidden"></button>
+            </div>
+            <div class="results">
+                <button id="out" class="events hidden"></button>
+                <button id="ball" class="events hidden"></button>
+                <button id="strike" class="events hidden"></button>
+            </div>
+            <div class="results">
+                <button id="out" class="events hidden"></button>
+                <button id="ball" class="events hidden"></button>
+                <button id="strike" class="events hidden"></button>
+            </div>
+            <div class="results">
+                <button id="out" class="events hidden"></button>
+                <button id="ball" class="events hidden"></button>
+                <button id="strike" class="events hidden"></button>
+            </div>
+            <div class="results">
+                <button id="out" class="events hidden"></button>
+                <button id="ball" class="events hidden"></button>
+                <button id="strike" class="events hidden"></button>
+            </div>
+            <div class="results">
+                <button id="out" class="events hidden"></button>
+                <button id="ball" class="events hidden"></button>
+                <button id="strike" class="events hidden"></button>
+            </div>
+        </div>
+
+        <!-- 번호판 -->
+        <div id="dial">
+            <button class="num-btns">0</button>
+            <button class="num-btns">1</button>
+            <button class="num-btns">2</button>
+            <button class="num-btns">3</button>
+            <button class="num-btns">4</button>
+            <button class="num-btns">5</button>
+            <button class="num-btns">6</button>
+            <button class="num-btns">7</button>
+            <button class="num-btns">8</button>
+            <button class="num-btns">9</button>
+        </div>
+        <button id="restart-btn" class="setting-btns"><img class="setting-imgs"
+                src="imgs/rotate-left-solid.svg">restart</button>
+        <button id="delete-btn" class="setting-btns"><img class="setting-imgs"
+                src="imgs/delete-left-solid.svg">delete</button>
+
+    </main>
+
+
+    <script src="main2.js"></script>
+</body>
+
+</html>
