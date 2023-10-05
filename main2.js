@@ -4,12 +4,12 @@ var randomList = [];
 randomList[0] = Math.floor(Math.random() * 10);   // 0~9
 do {
     randomList[1] = Math.floor(Math.random() * 10)
-} while (randomList[0] === randomList[1])
+} while (randomList[0] === randomList[1]);
 do {
     randomList[2] = Math.floor(Math.random() * 10)
-} while (randomList[0] === randomList[2] || randomList[1] === randomList[2])
+} while (randomList[0] === randomList[2] || randomList[1] === randomList[2]);
 
-console.log(randomList)
+console.log(randomList);
 
 // 유저가 누른 숫자 배열
 var inputNumList = [];
@@ -53,6 +53,7 @@ document.querySelector('#delete-btn').addEventListener('click', handleDelete);
 function handleDelete() {
     inputNumList.pop();
     console.log(inputNumList);
+
     if (inputNumList.length == 2) {
         document.querySelector('#num3').innerHTML = '?'
     } else if (inputNumList.length == 1) {
@@ -62,9 +63,55 @@ function handleDelete() {
     }
 }
 
+// 자리와 숫자가 모두 일치하면 strike
+// 자리는 다르면서 숫자는 일치하면 ball
+// 모두 다르면 out
 
-for (var s = 0; s < 3; s++) {
-    if (inputNumList[s] === randomList[s]) {
-        s++
+var strike = 0;
+var ball = 0;
+
+function gameBegin() {
+    // 아무것도 입력하지 않은 상태에서 '확인'버튼 눌렀을 때 3OUT 나오는 것 방지 위함
+    if (inputNumList.length === 3) {
+        // 매 게임마다 리셋 위함
+        strike = 0;
+        ball = 0;
+
+        for (var a = 0; a < 3; a++) {
+            if (parseInt(inputNumList[a]) === randomList[a]) {
+                strike++;
+            } else {
+                for (var b = 0; b < 3; b++) {
+                    if (a != b && parseInt(inputNumList[a]) === randomList[b]) {
+                        ball++;
+                    } else if ((a != b) && (parseInt(inputNumList[b]) === randomList[a])) {
+                        ball++;
+                    }
+                }
+            }
+            if (strike === 3) {
+                document.querySelector('#result').innerHTML = 'You WIN!!';
+            } else if (strike === 0 && ball === 0) {
+                document.querySelector('#result').innerHTML = '3 OUT';
+
+            } else {
+                document.querySelector('#result').innerHTML = strike + " STRIKE " + ball + " BALL";
+
+            }
+            inputNumList = [];
+            document.querySelector('#num1').innerHTML = '?'
+            document.querySelector('#num2').innerHTML = '?'
+            document.querySelector('#num3').innerHTML = '?'
+        }
+    } else {
+        document.querySelector('#result').innerHTML = '숫자 세 개를 입력하세요!';
+        inputNumList = [];
+        document.querySelector('#num1').innerHTML = '?'
+        document.querySelector('#num2').innerHTML = '?'
+        document.querySelector('#num3').innerHTML = '?'
     }
+
 }
+
+document.querySelector('#confirm-btn').addEventListener('click', gameBegin);
+
