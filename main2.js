@@ -80,11 +80,11 @@ function gameBegin() {
 
     // 아무것도 입력하지 않은 상태에서 '확인'버튼 눌렀을 때 3OUT 나오는 것 방지 위함
     if (inputNumList.length === 3) {
-        // 매 게임마다 리셋 위함
+        // 매 게임마다 로직 리셋 위함
         strike = 0;
         ball = 0;
 
-        // for문 두개 이용, 컴퓨터(a)랑 유저(b)의 각자 위치를 하나씩 
+        // 게임 로직: for문 두개 이용, 컴퓨터(a)랑 유저(b)의 각자 위치를 하나씩 
         for (var a = 0; a < 3; a++) {
             if (parseInt(inputNumList[a]) === randomList[a]) {
                 strike++;
@@ -99,38 +99,65 @@ function gameBegin() {
                 }
             }
         }
-
-        var tmp = document.createElement('button');
-
-        if (strike === 3) {
-            document.querySelector('#result').innerHTML = 'You WIN!!';
-        }
-        else if (strike === 0 && ball === 0) {
-            tmp.innerText = '3O'
-            tmp.setAttribute("class", "events");
-            tmp.setAttribute("id", "out-btn");
-            document.querySelector('#result-board').appendChild(tmp);
-        }
-        else if (0 < strike < 3) {
-            tmp.innerText = `${strike}S`
-            tmp.setAttribute("class", "events");
-            tmp.setAttribute("id", "strike-btn");
-            document.querySelector('#result-board').appendChild(tmp);
-        }
-        else if (0 < ball <= 3) {
-            tmp.innerText = `${ball}B`
-            tmp.setAttribute("class","events");
-            tmp.setAttribute("id","ball-btn");
-            document.querySelector('#result-board').appendChild(tmp);
-        }
-        
+        // 기록 보여준 후 #num-board 리셋 위함
         inputNumList = [];
         document.querySelector('#num1').innerHTML = '?'
         document.querySelector('#num2').innerHTML = '?'
         document.querySelector('#num3').innerHTML = '?'
+
+        // 기록생성 로직
+
+        // .results가 8개까지만 만들어지기 위함
+        if (document.querySelector('#result-board').childElementCount < 8 ) {
+            var tmpDiv = document.createElement('div');
+            var tmpBtn = document.createElement('button');
+    
+            if (strike === 3) {
+                document.querySelector('#result').innerHTML = 'You WIN!!';
+                // 팝업창의 '게임 다시하기' 버튼 누르면 창 새로고침 되도록
+                window.location.reload();
+            }
+            else if (strike === 0 && ball === 0) {
+                tmpBtn.innerText = '3O'
+                tmpBtn.setAttribute("class", "events");
+                tmpBtn.setAttribute("id", "out-btn");
+                tmpDiv.setAttribute("class", "results");
+                document.querySelector('#result-board').appendChild(tmpDiv);
+                document.querySelector(".results").appendChild(tmpBtn);
+            }
+            else if (0 < strike < 3) {
+                tmpBtn.innerText = `${strike}S`
+                tmpBtn.setAttribute("class", "events");
+                tmpBtn.setAttribute("id", "strike-btn");
+                tmpDiv.setAttribute("class", "results");
+                document.querySelector('#result-board').appendChild(tmpDiv);
+                document.querySelector(".results").appendChild(tmpBtn);
+            }
+            else if (0 < ball <= 3) {
+                tmp.innerText = `${ball}B`
+                tmp.setAttribute("class","events");
+                tmp.setAttribute("id","ball-btn");                
+                tmpDiv.setAttribute("class", "results");
+                document.querySelector('#result-board').appendChild(tmpDiv);
+                document.querySelector(".results").appendChild(tmpBtn);
+            }
+            console.log(document.querySelector('#result-board').childElementCount)
+        } 
+
+        // 9번째도 3 strike를 못하면 'You LOSE!!'가 뜨길 바람
+        else if (document.querySelector('#result-board').childElementCount === 8) {
+            document.querySelector('#result-board').remove();
+            document.querySelector('#result').innerHTML = 'You LOSE!!';
+            inputNumList = [];
+            document.querySelector('#num1').innerHTML = '?'
+            document.querySelector('#num2').innerHTML = '?'
+            document.querySelector('#num3').innerHTML = '?'
+        }
     } 
 
+    // 숫자 세 개 안 채웠을 경우
     else {
+        // 안 사라지고 계속 있는 오류 발견!!!
         document.querySelector('#result').innerHTML = '숫자 세 개를 입력하세요!';
         inputNumList = [];
         document.querySelector('#num1').innerHTML = '?'
