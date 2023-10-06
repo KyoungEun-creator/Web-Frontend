@@ -1,138 +1,142 @@
 body {
-    margin: 0;
+  margin: 0;
 }
 main {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    position: relative;
-} 
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  position: relative;
+}
 #example {
-    position: absolute;
-    top: 15px;
+  position: absolute;
+  top: 15px;
 }
 .setting-btns {
-    position: absolute;
-    font-size: 90px;
-    width: 80px;
-    height: 35px;
-    font-size: 15px;
-    display: flex;
-    top: 15px;
-    align-items: center;
-    padding: 5px;
+  position: absolute;
+  font-size: 90px;
+  width: 80px;
+  height: 35px;
+  font-size: 15px;
+  display: flex;
+  top: 15px;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
 }
 #restart-btn {
-    left: 120px;
-
+  left: 120px;
 }
 #delete-btn {
-    right: 120px;
+  right: 120px;
 }
 .setting-imgs {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }
 #bg-img {
-    position: relative;
+  position: relative;
 }
 #num-board {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    top: 106px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 106px;
 }
 .chosen-num {
-    background-color: white;
-    width: 110px;
-    height: 100px;
-    border: 1px solid black;
-    margin-right: 7px;
-    color: rgba(93, 1, 19, 0.85);
-    font-size: 90px;
-    text-align: center; 
-    border-radius: 10px;
+  background-color: white;
+  width: 110px;
+  height: 100px;
+  border: 1px solid black;
+  margin-right: 7px;
+  color: rgba(93, 1, 19, 0.85);
+  font-size: 90px;
+  text-align: center;
+  border-radius: 10px;
 }
 #result-board {
-    border: 1px solid black;
-    position: absolute; 
-    top: 380px;
-    width: 700px;
-    height: 140px;
-    border-collapse: collapse;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+  /* border: 1px solid black; */
+  position: absolute;
+  top: 380px;
+  width: 700px;
+  height: 140px;
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .results {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  margin: 5px;
 }
 .events {
-    border: 2px solid black;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 10px;
-    color: white;
-    margin: 1px;
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 10px;
+  color: white;
+  margin: 1px;
 }
-#out {
-    background-color: red;
+#out-btn {
+  background-color: red;
 }
-#ball {
-    background-color: rgb(6, 197, 6);
+#ball-btn {
+  background-color: rgb(6, 197, 6);
 }
-#strike {
-    background-color: blue;
+#strike-btn {
+  background-color: blue;
 }
 .hidden {
-    display: none;
+  display: none;
 }
 #dial {
-    background-color: #CF0A2C;
-    opacity: 80%;
-    height: 186px;
-    padding: 10px;
-    bottom: 10px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  background-color: #cf0a2c;
+  opacity: 80%;
+  height: 186px;
+  padding: 10px;
+  bottom: 10px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .num-btns {
-    flex-grow: 1; 
-    flex-shrink: 1;
-    flex-basis: 80px;
-    height: 74px;
-    flex-shrink: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    color: white;
-    background-color: #5D0113;
-    opacity: 85%;
-    margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 80px;
+  height: 74px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: white;
+  background-color: #5d0113;
+  opacity: 85%;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 }
 #confirm-btn {
-    position: absolute;
-    bottom: 250px;
-    width: 80px;
-    height: 35px;
+  position: absolute;
+  top: 250px;
+  width: 80px;
+  height: 35px;
 }
 #result {
-    position: absolute;
-    top: 400px;
-    font-size: 50px;
+  position: absolute;
+  top: 400px;
+  font-size: 50px;
+}
+.out-btn {
+  background-color: red;
 }
