@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자퍼즐게임</title>
+    <link rel="icon" href="imgs/favicon.png">
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <!-- -------------- header -------------- -->
+    <div id="header">
+        <button id="hint_btn" class="setting_btn" type="submit" value="hint">Hint</button>
+        <h1>내가 만드는 퍼즐</h1>
+        <button id="shuffle_btn" class="setting_btn" type="submit" value="shuffle">Shuffle</button>    
+    </div>
+
+    <!-- -------------- main -------------- -->
+    <main id="puzzle_zone">
+            <ul id="img_container">
+                <!-- 유저가 퍼즐 이미지를 선택할 수 있도록 할 예정 -->
+                <!-- <label id="input_img_btn" for="input_img">
+                    퍼즐 선택하기
+                </label>
+                <input type="file" id="input_img" style="display:none"/>  -->
+
+                <!-- 쪼개지는 개수만큼 <li>가 들어가도록 할 예정 -->
+            </ul>
+
+            <!-- 퍼즐 맞추기 성공 시 보이는 텍스트 -->
+            <p class="game_txt">YOU WIN!</p>
+    </main>
+
+    <!-- -------------- form -------------- -->
+    <!-- 유저가 선택한 숫자만큼 퍼즐을 쪼갤 수 있도록 할 예정 -->
+    <form id="puzzle_size">
+        <input id="row_num" class="puzzle_size_selection" type="number" max="20" min="2">
+        <span class="puzzle_size_selection">X</span>
+        <input type="number" id="column_num" class="puzzle_size_selection" max="20" min="2">
+    </form>
+
+    <script src="main3.js"></script>
+</body>
+</html>

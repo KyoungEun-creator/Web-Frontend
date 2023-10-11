@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------- header -------------- */
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 60px 0 60px;
+}
+h1 {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.setting_btn {
+  width: 90px;
+  height: 30px;
+  font-size: 1rem;
+  border: 2px solid #ff6600;
+  background-color: transparent;
+  border-radius: 4px;
+  color: black;
+  cursor: pointer;
+}
+
+/* -------------- main -------------- */
+#puzzle_zone {
+  border: 1px solid orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 70vh;
+}
+#img_container {
+  width: 500px;
+  height: 500px;
+  border: 1px dashed black;
+  align-items: center;
+}
+
+/* -------------- form -------------- */
+#puzzle_size {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.puzzle_size_selection {
+  font-size: 1.5rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.game_txt {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  color: #ff6600;
+  font-size: 20rem;
+}
