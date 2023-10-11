@@ -9,7 +9,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0 60px 0 60px;
+  margin: 30px 60px 30px 60px;
 }
 h1 {
   text-align: center;
@@ -26,22 +26,32 @@ h1 {
   color: black;
   cursor: pointer;
 }
+#hint_img {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 70px;
+  left: 150px;
+  border: 1px solid black;
+  display: none;
+}
 
 /* -------------- main -------------- */
 #main_zone {
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 60px 0 90px 0;
 }
 #puzzle_zone {
-  border: 1px dashed black;
+  /* border: 1px dashed black; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 #img_container {
-  border: 1px dashed deeppink;
+  /* border: 1px dashed deeppink; */
   list-style: none;
   display: grid; /* 항상 일정한 비율로 정렬되도록 함 */
   grid-template-columns: repeat(4, 1fr); /* 하나의 요소를 4번 반복하겠다는 뜻 */
@@ -49,17 +59,16 @@ h1 {
 li {
   width: 100px;
   height: 100px;
-  border: 1px dashed darkturquoise;
-  /* float: left;  좌우로 정렬 */
+  /* border: 1px dashed darkturquoise; */
   background: url(imgs/favicon.png);
 }
-.game_txt {
+#finish_txt {
   display: none;
   position: absolute;
   justify-content: center;
   color: #ff6600;
   text-shadow: 1px 1px rgba(0, 0, 0, 5);
-  font-size: 20rem;
+  font-size: 10rem;
 }
 
 /* -------------- form -------------- */
@@ -67,78 +76,80 @@ li {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 30px 0 30px 0;
 }
 .puzzle_size_selection {
   font-size: 1.5rem;
   margin: 1rem;
   padding: 1rem;
 }
+#start_btn {
+  border: none;
+  background-color: transparent;
+}
 
-/* li 위치 */
-.class0 {
+/* -------------- li 위치 -------------- */
+#img0 {
   background-position-x: 0px;
   background-position-y: 0px;
 }
-.class1 {
+.img1 {
   background-position-x: -100px;
   background-position-y: 0px;
 }
-.class2 {
+.img2 {
   background-position-x: -200px;
   background-position-y: 0px;
 }
-.class3 {
+.img3 {
   background-position-x: -300px;
   background-position-y: 0px;
 }
-/* ------------------------------- */
-.class4 {
+.img4 {
   background-position-x: 0px;
   background-position-y: -100px;
 }
-.class5 {
+.img5 {
   background-position-x: -100px;
   background-position-y: -100px;
 }
-.class6 {
+.img6 {
   background-position-x: -200px;
   background-position-y: -100px;
 }
-.class7 {
+.img7 {
   background-position-x: -300px;
   background-position-y: -100px;
 }
-/* ------------------------------- */
-.class8 {
+.img8 {
   background-position-x: 0px;
   background-position-y: -200px;
 }
-.class9 {
+.img9 {
   background-position-x: -100px;
   background-position-y: -200px;
 }
-.class10 {
+.img10 {
   background-position-x: -200px;
   background-position-y: -200px;
 }
-.class11 {
+.img11 {
   background-position-x: -300px;
   background-position-y: -200px;
 }
-/* ------------------------------- */
-.class12 {
+.img12 {
   background-position-x: 0px;
   background-position-y: -300px;
 }
-.class13 {
+.img13 {
   background-position-x: -100px;
   background-position-y: -300px;
 }
-.class14 {
+.img14 {
   background-position-x: -200px;
   background-position-y: -300px;
 }
-.class15 {
+.img15 {
   background-position-x: -300px;
   background-position-y: -300px;
 }
