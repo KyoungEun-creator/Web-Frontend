@@ -16,7 +16,6 @@ let draggedPuzzle = {
     index: null
 }
 
-
 puzzleStart();
 
 // 게임 시작 
@@ -83,6 +82,9 @@ function checkStatus() {
     // 매칭 안 된 퍼즐이 더이상 없을 때 게임 종료
     if (unmatchedList.length === 0) {
         finishTxt.style.display = 'block';
+        setTimeout(()=> {
+            finishTxt.style.display = 'none';
+        }, 3000);
     }
 }
 
@@ -110,7 +112,7 @@ imgContainer.addEventListener('drop', function(e) {
         let originPlace;
         let isLast = false;
     
-        // 마지막 퍼즐이 아니라면
+        // 마지막 퍼즐이 아니라면(nextSibling이 있다면)
         if (draggedPuzzle.element.nextSibling) {
             originPlace = draggedPuzzle.element.nextSibling;
         }

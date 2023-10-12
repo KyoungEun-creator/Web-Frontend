@@ -11,10 +11,21 @@
 <body>
     <!-- -------------- header -------------- -->
     <div id="header">
-        <button id="hint_btn" class="setting_btn" type="submit" value="hint">Hint</button>
-        <img id="hint_img" src="imgs/favicon.png">
-        <h1>내가 만드는 퍼즐</h1>
-        <button id="shuffle_btn" class="setting_btn" type="submit" value="shuffle">Shuffle</button>    
+        <div class="header_left">
+            <button id="hint_btn" class="setting_btn" type="submit" value="hint">힌트</button>
+            <img id="hint_img" src="imgs/favicon.png">
+            <button id="shuffle_btn" class="setting_btn" type="submit" value="shuffle">섞기</button>  
+        </div>      
+        <div class="header_center">
+            <h1>내가 만드는 퍼즐</h1>
+        </div>
+        <div class="header_right">
+            <!-- 유저가 퍼즐 이미지를 선택할 수 있도록 할 예정 -->
+            <label id="select_btn" class="setting_btn" for="input_img">
+                퍼즐 선택하기
+            </label>
+            <input type="file" id="input_img" accept="img/*" style="display:none"/> 
+        </div>
     </div>
 
 
@@ -22,12 +33,6 @@
     <main id="main_zone">
         <div id="puzzle_zone">
             <ul id="img_container">
-                <!-- 유저가 퍼즐 이미지를 선택할 수 있도록 할 예정 -->
-                <!-- <label id="input_img_btn" for="input_img">
-                    퍼즐 선택하기
-                </label>
-                <input type="file" id="input_img" style="display:none"/>  -->
-
                 <!-- 쪼개지는 개수만큼 <li>가 들어가도록 할 예정 -->
             </ul>
             
